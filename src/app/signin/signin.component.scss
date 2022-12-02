@@ -1,0 +1,191 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .img {
+        background: url("/assets/bg-img.png");
+        background-size: cover;
+        background-position: center center;
+        align-self: stretch;
+        flex: 3;
+        height: 100vh;
+    }
+
+    .container__form {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        flex: 1;
+        height: 100vh;
+        .form{
+            width: 100%;
+            padding: 40px;
+        }
+
+        .form__logo {
+            margin-bottom: 20px;
+        }
+
+        .login__input,
+        .password__input {
+            color:#333333;
+            font-size: 11px;
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+
+            input {
+                background-color: #F2F2F2;
+                border: none;
+                border-radius: 6px;
+                padding: 10px 14px;
+            }
+
+            input::placeholder {
+                font-size: 12px;
+            }
+        }
+
+        .icon {
+            position: relative;
+        }
+
+        .icon::before {
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 18px;
+            bottom: 0px;
+            width: 20px;
+            background: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 2.79724C4.36364 2.79724 1.25818 5.05906 0 8.25179C1.25818 11.4445 4.36364 13.7063 8 13.7063C11.6364 13.7063 14.7418 11.4445 16 8.25179C14.7418 5.05906 11.6364 2.79724 8 2.79724ZM8 11.8882C5.99273 11.8882 4.36364 10.2591 4.36364 8.25179C4.36364 6.24451 5.99273 4.61542 8 4.61542C10.0073 4.61542 11.6364 6.24451 11.6364 8.25179C11.6364 10.2591 10.0073 11.8882 8 11.8882ZM8 6.06997C6.79273 6.06997 5.81818 7.04451 5.81818 8.25179C5.81818 9.45906 6.79273 10.4336 8 10.4336C9.20727 10.4336 10.1818 9.45906 10.1818 8.25179C10.1818 7.04451 9.20727 6.06997 8 6.06997Z' fill='%234D4D4D' /%3E%3C/svg%3E") center / contain no-repeat;
+        }
+
+        .form__checkbox{
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .checkbox__subtitle{
+            font-size: 12px;
+            padding: 0 5px;
+        }
+
+        .checkbox {
+            position: relative;
+            appearance: none;
+            outline: none;
+            width: 40px;
+            height: 25px;
+            background-color: #ffffff;
+            border: 1px solid #D9DADC;
+            border-radius: 50px;
+            box-shadow: inset -20px 0 0 0 #ffffff;
+            transition-duration: 200ms;
+        }
+
+        .checkbox::after {
+
+            content: "";
+            position: absolute;
+            top: 1px;
+            width: 18px;
+            height: 20px;
+            background-color: transparent;
+            border-radius: 50%;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+
+        }
+        .checkbox:checked {
+            border-color: #4ED164;
+            box-shadow: inset 20px 0 0 0 #4ED164;
+        }
+        .checkbox:checked:after {
+            left: 20px;
+            background-color: #F2F2F2;
+            box-shadow: -2px 4px 3px rgba(0,0,0,0.05);
+        }
+        .checkbox__link, .checkbox__link:visited{
+            text-decoration: none;
+            font-size: 12px;
+            color: #007AFF;
+            font-weight: 500;
+            margin-left: auto;
+        }
+        .form__button{
+           width: 100%;
+           background-color: #007AFF;
+           color: white;
+           font-weight: 600;
+           border: none;
+           border-radius: 6px;
+           padding: 10px 0;
+        }
+        .form__breakline{
+            margin: 22px 0;
+            height: 1px;
+            background-color: #E5E5E5;
+        }
+        .black{
+            background-color: #333333;
+            font-weight: 200;
+            font-size: 11px;
+            
+        }
+        span{
+            position: relative;
+        }
+
+        span::before{
+            content: "";
+            position: absolute;
+            right: 5px;
+            top: 0px;
+            bottom: 0px;
+            width: 20px;
+            background: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.8692 10.8587C19.87 10.1772 19.812 9.49701 19.6957 8.82544H10.2V12.6766H15.6387C15.5274 13.2917 15.2919 13.8781 14.9462 14.4003C14.6006 14.9226 14.1521 15.3699 13.6277 15.7154V18.2152H16.8736C18.7741 16.4751 19.8692 13.9016 19.8692 10.8587Z' fill='%234285F4'/%3E%3Cpath d='M10.1999 20.6306C12.9172 20.6306 15.2051 19.7446 16.8735 18.2169L13.6276 15.717C12.7242 16.3253 11.5606 16.6725 10.1999 16.6725C7.57353 16.6725 5.34432 14.9142 4.54718 12.5449H1.20337V15.1212C2.04144 16.7773 3.32654 18.1695 4.91518 19.1424C6.50382 20.1153 8.33349 20.6305 10.1999 20.6306Z' fill='%2334A853'/%3E%3Cpath d='M4.5471 12.5446C4.12568 11.3031 4.12568 9.95855 4.5471 8.71701V6.14075H1.20329C0.498276 7.53395 0.131104 9.07157 0.131104 10.6308C0.131104 12.19 0.498276 13.7277 1.20329 15.1209L4.5471 12.5446Z' fill='%23FBBC04'/%3E%3Cpath d='M10.1999 4.58941C11.6359 4.56611 13.0234 5.1049 14.0626 6.08933L16.9365 3.23531C15.1141 1.5355 12.6999 0.602274 10.1999 0.631271C8.33349 0.631356 6.50382 1.1466 4.91518 2.11948C3.32654 3.09236 2.04144 4.48458 1.20337 6.14072L4.54718 8.71698C5.34432 6.34765 7.57353 4.58941 10.1999 4.58941Z' fill='%23EA4335'/%3E%3C/svg%3E%0A") center / contain no-repeat;
+        }
+
+        .signup{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            .small{
+                font-size: 10px;
+            }
+            p{
+                font-size: 10px;
+                margin-right: 10px;
+            }
+        }
+        .credentials{
+            font-size: 10px;
+            margin-left: auto;
+            color: #666666;
+            margin-top: auto;
+
+            p{
+                margin-top: auto;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 768px) {
+    .img{
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1288px){
+    .checkbox:checked:after {
+        left: 8px;
+    }
+}
