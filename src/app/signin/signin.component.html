@@ -16,14 +16,10 @@
             <h1>Nice to see you again</h1>
 
             <!-- INPUT COMPONENT -->
-            <label for="name" class="login__input">Login
-                <input type="text" name="name" placeholder="Email or phone number">
-            </label>
-
-            <label for="password" class="password__input icon">Password
-                <input type="password" name="password" placeholder="Enter password">
-            </label>
-
+          
+            <app-input labelname="Login" placeholder="Email or phone number" type="text"></app-input>
+            <app-input labelname="Password" placeholder="Enter Password" type="password"></app-input>
+            
             <!-- FORM SUBMISSION COMPONENT -->
             <div class="form__checkbox">
                 <input type="checkbox" class="checkbox">
