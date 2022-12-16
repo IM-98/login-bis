@@ -1,8 +1,8 @@
 <div class="chatbox__container">
     <div class="chatbox__header">
-        
+
         <div class="header__left">
-            <img src="/assets/portrait.png" class="main" alt=""> 
+            <img src="/assets/portrait.png" class="main" alt="">
             <div>
                 <h2 class="chatbox__title">Design Team</h2>
                 <p>60 member, 10 online</p>
@@ -12,10 +12,19 @@
         <div class="header__right">
             <img src={{messages[0].imageUrl}} alt="" class="img-group">
             <img src={{messages[1].imageUrl}} alt="" class="img-group">
-            <img src={{messages[2].imageUrl}} alt="" class="img-group"> 
+            <img src={{messages[2].imageUrl}} alt="" class="img-group">
             <button class="addOne">+</button>
         </div>
     </div>
-    <app-message-item imagesrc={{messages[0].imageUrl}} message="Je suis un message" name="Ahmed" hour="10:30 AM"></app-message-item>
-    <app-chatbar ></app-chatbar>
+    <app-message-item imagesrc={{messages[2].imageUrl}} message="Hi, Are you still Web Designer ?" name="Killan James"
+        hour="10:30 AM">
+    </app-message-item>
+    <app-message-item imagesrc={{messages[1].imageUrl}} message="Hey, happy to hear from you. Yes, I will be back in
+    a couple fo days." name="Claudia Maudi" hour="10:30 AM">
+    </app-message-item>
+    <app-message-item imagesrc={{messages[5].imageUrl}} message="Awesome &#9786;" name="Milie Nose"
+        hour="10:30 AM">
+    </app-message-item>
+
+    <app-chatbar></app-chatbar>
 </div>
