@@ -9,7 +9,7 @@
         <!-- FORM COMPONENT -->
         <form action="" class="form">
 
-            <!-- FORM INPUTS COMPONENT -->
+            <!-- LOGO & TITLE FORM -->
             <img src="/assets/logo.png" alt="logo" class="form__logo">
 
 
@@ -24,19 +24,29 @@
             <div class="form__checkbox">
                 <input type="checkbox" class="checkbox">
                 <label for="checkbox" class="checkbox__subtitle">Remember me</label>
-                <a href="#" class="checkbox__link"> Forgot password ?</a>
+                <a  class="checkbox__link" routerLink="/password"> Forgot password ?</a>
             </div>
-            <button type="submit" class="form__button"> Sign in</button>
+
+            <app-submitbtn value="signin" name="Sign in" (click)="goPlaces()"></app-submitbtn>
+
             <div class="form__breakline"></div>
-            <button type="submit" class="form__button black"> <span></span> sign in with Google</button>
+
+            <app-submitbtn value="google" name="Or sign in on Google">
+                <span></span>
+            </app-submitbtn>
+
         </form>
+
          <!-- FORM SIGNUP REDIRECT COMPONENT -->
+
         <div class="signup">
             <p>Don't  have an account?</p>
-            <a href="#" class="checkbox__link small"> Signup now</a>
+            <a  class="checkbox__link small" routerLink="/signup"> Signup now</a>
         </div>
+
         <div class="credentials">
-            <p>© Perfect Login 2021</p>
+            <p>© Octom 2022</p>
         </div>
+        
     </div>
 </div>

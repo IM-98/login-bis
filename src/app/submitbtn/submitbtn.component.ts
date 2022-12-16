@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-submitbtn',
   templateUrl: './submitbtn.component.html',
   styleUrls: ['./submitbtn.component.scss']
 })
-export class SubmitbtnComponent implements OnInit {
+export class SubmitbtnComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() class!: string;
+  @Input() value!: string;
+  @Input() name!: string;
 
 }

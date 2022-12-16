@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -10,6 +11,8 @@ export class InputComponent implements OnInit{
   @Input() labelname!: string;
   @Input() placeholder!: string;
   @Input() type!: string;
+ 
+
   isPassword: boolean = true;
   
   ngOnInit() {

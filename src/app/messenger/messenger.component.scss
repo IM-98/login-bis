@@ -1,0 +1,90 @@
+:host{
+    flex:7;
+}
+
+.messenger__container {
+    display: flex;
+    height: 100%
+   
+   
+}
+
+:host ::ng-deep div.searchbar__container{
+    background-color: #212229;
+    justify-content: flex-start;
+
+}
+:host ::ng-deep input.searchbar{
+    // width: 80%;
+    margin: 0;
+
+}
+:host ::ng-deep div.logo{
+  display: none;
+    margin: 0;
+}
+
+.messenger__search {
+    background-color: #212229;
+    color: white;
+    // width: 35%;
+    align-items: center;
+    padding: 30px;
+    flex:1
+}
+
+h1{
+    font-size: 30px;
+}
+
+.messenger__box {
+    display: flex;
+    list-style: none;
+
+    // justify-content: space-between;
+    flex-direction: column;
+
+    .messenger__box-left {
+        margin: 5px 0;
+        display: flex;
+        align-items: flex-start;
+
+        span {
+            margin-left: auto;
+            margin-top: 0;
+        }
+
+        img {
+            // margin-top: auto;
+            height: 35px;
+            width: 35px;
+            margin-right: 10px;
+            margin-top: 0px;
+            border-radius: 50%;
+        }
+
+
+    }
+
+}
+.messenger__info{
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+   
+}
+.messenger__name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.messenger__date {
+    margin: 15px 0;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.messenger__message {
+    font-size: 12px;
+    font-weight: 200;
+}

@@ -1,0 +1,12 @@
+.container-outlet{
+	display: flex;
+	flex-direction: row;
+}
+
+.container{
+	height: 100%;
+}
+
+:host{
+	height: 100vh;
+}

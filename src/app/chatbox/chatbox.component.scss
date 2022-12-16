@@ -1,0 +1,60 @@
+:host {
+    flex: 3;
+}
+
+
+.chatbox__container {
+    display: flex;
+    background-color: #050505;
+    color: white;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chatbox__header {
+    padding: 20px;
+    display: flex;
+    flex: 2;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.header__left {
+    display: flex;
+
+    p {
+        font-size: 12px;
+        color: #768396;
+        margin: 0;
+        padding: 3px 0;
+    }
+
+    img {
+        border-radius: 50%;
+        padding: 0 10px;
+    }
+
+    .chatbox__title {
+        margin: 0;
+        font-weight: 400;
+    }
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+
+    .img-group {
+        width: 30px;
+        height: 30px;
+    }
+
+    .addOne {
+        background-color: #282932;
+        border-radius: 50%;
+        border: 0.5px solid grey;
+        color: white;
+        margin-left: 10px;
+    }
+}

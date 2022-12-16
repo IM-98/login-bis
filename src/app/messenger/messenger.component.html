@@ -1,0 +1,26 @@
+<div class="messenger__container">
+    <div class="messenger__search">
+        <h1 class="">Messages</h1>
+        <app-searchbar [withMargin]="true" placeholder="       Search" class="side"></app-searchbar>
+        <div class="messenger__box" *ngFor="let item of messages">
+            <div class="messenger__box-left">
+                <img src={{item.imageUrl}}>
+                <div class="messenger__info">
+                    <li class="messenger__name">{{item.name}} </li>
+                    <li class="messenger__message">{{item.message}} </li>
+                </div>
+                
+                <span class="messenger__date">{{item.hour}}</span>
+            </div>
+            
+            
+        </div>
+        
+        
+    </div>
+    <div class="messenger__main"></div>
+    
+    <app-chatbox></app-chatbox>
+    <app-chatinfo></app-chatinfo>
+</div>
+
