@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import Message from '../message';
+import Message from 'src/app/models/MessageModel';
+
 
 @Component({
   selector: 'app-chatinfo',

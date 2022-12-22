@@ -16,15 +16,18 @@
             <button class="addOne">+</button>
         </div>
     </div>
-    <app-message-item imagesrc={{messages[2].imageUrl}} message="Hi, Are you still Web Designer ?" name="Killan James"
-        hour="10:30 AM">
-    </app-message-item>
-    <app-message-item imagesrc={{messages[1].imageUrl}} message="Hey, happy to hear from you. Yes, I will be back in
-    a couple fo days." name="Claudia Maudi" hour="10:30 AM">
-    </app-message-item>
-    <app-message-item imagesrc={{messages[5].imageUrl}} message="Awesome &#9786;" name="Milie Nose"
-        hour="10:30 AM">
-    </app-message-item>
+    <ng-container *ngIf="messagesAPI">
+
+        <app-message-item imagesrc={{messages[2].imageUrl}} message={{messagesAPI!.comments[0].body}}
+            name={{messagesAPI!.comments[0].user.username}} hour="10:30 AM">
+        </app-message-item>
+        <app-message-item imagesrc={{messages[1].imageUrl}} message={{messagesAPI!.comments[1].body}}
+            name={{messagesAPI!.comments[1].user.username}} hour="10:30 AM">
+        </app-message-item>
+        <app-message-item imagesrc={{messages[5].imageUrl}} message={{messagesAPI!.comments[2].body}}
+            name={{messagesAPI!.comments[2].user.username}} hour="10:30 AM">
+        </app-message-item>
+    </ng-container>
 
     <app-chatbar></app-chatbar>
 </div>

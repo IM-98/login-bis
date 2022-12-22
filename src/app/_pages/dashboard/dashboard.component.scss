@@ -1,12 +1,10 @@
 .container-outlet{
 	display: flex;
-	flex-direction: row;
+	height: inherit;
 }
 
 .container{
 	height: 100%;
-}
-
-:host{
-	height: 100vh;
+	display: flex;
+	flex-direction: column;
 }

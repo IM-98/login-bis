@@ -1,0 +1,74 @@
+.container__signup {
+    height: 100vh;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.signup-form {
+    width: 40%;
+}
+
+.login__input {
+    color: #333333;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+
+    input {
+        background-color: #F2F2F2;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 14px;
+    }
+
+    select {
+        background-color: #F2F2F2;
+        border: none;
+        padding: 10px 1px 10px 10px;
+        border-radius: 6px;
+        margin-right: 3px;
+    }
+
+    .remove{
+        background-color: red;
+        border-radius: 50%;
+        cursor: pointer;
+        color: white;
+        font-weight: 700;
+        padding: 2.5px 6px;
+        font-size: 8px;
+        margin: 5px;
+    }
+
+    input::placeholder {
+        font-size: 12px;
+    }
+}
+
+.phone {
+    flex-direction: row;
+    margin: 30px 0;
+    align-items: center;
+    width: 100%;
+}
+.phones__form{
+    width: 100%;
+}
+.form__button {
+    cursor: pointer;
+    width: 100%;
+    background-color: #007AFF;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+}
+
+.error {
+    color: red;
+    margin: 15px 0;
+    font-size: 12px;
+}

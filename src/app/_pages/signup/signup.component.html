@@ -1,0 +1,59 @@
+<div class="container__signup">
+    <form class="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <h2>Welcome to Octom</h2>
+
+        <h4>Please create an account to continue</h4>
+
+
+        <label for="email" class="login__input"> Email
+            <input type="text" name="email" placeholder="Enter email" formControlName="email">
+        </label>
+        <div class="error" *ngIf="email?.errors && email?.touched">
+            <span *ngIf="email?.errors!['pattern']">Invalid format</span>
+            <span *ngIf="email?.value == '' ">mail required</span>
+        </div>
+
+
+        <label for="password" class="login__input"> Password
+            <input type="password" name="password" placeholder="Enter password" formControlName="password">
+        </label>
+
+        <div class="error" *ngIf="password?.touched && password?.errors">
+            <span *ngIf="password?.errors!['pattern']">At least 8 characters, one uppercase, one number and one special
+                character</span>
+            <span *ngIf="password?.value == '' ">password required</span>
+        </div>
+
+        <label for="confirmpassword" class="login__input"> Confirm password
+            <input type="password" name="confirmpassword" placeholder="Confirm password"
+                formControlName="confirmPassword">
+        </label>
+
+        <div class="error" *ngIf="confirmPassword?.touched && confirmPassword?.errors">
+            <span *ngIf="confirmPassword?.errors!['pattern']">Minimum 8 charactères, une majuscule et un caractère
+                spécial</span>
+            <span *ngIf="confirmPassword?.value == '' ">password required</span>
+        </div>
+
+        <div formArrayName="phones" class="phones__form">
+            <div *ngFor="let phone of phones.controls; let i=index; let first=first" [formGroupName]="i" class="login__input phone">
+                <select formControlName="phonePrefix" required>
+                    <option selected hidden value="">+</option>
+                    <option value="66">+98</option>
+                    <option value="66">+99</option>
+                    <option value="66">+90</option>
+                    <option value="66">+66</option>
+                </select>
+                <input type="phone" name="phone" formControlName="phoneNumber" placeholder="812345678">
+                <span (click)="deletePhone(i)" *ngIf="!first" class="remove">X</span>
+                <div class="error" *ngIf="getPhoneNumber(i)?.touched && getPhoneNumber(i)?.errors">
+                    Invalid Phone Number
+                </div>
+            </div>
+        </div>
+        <div *ngIf="phones.length <= 2"(click)="addPhone()">+ Add Phone number</div>
+       
+        <button type="submit" class="form__button"> Sign Up </button>
+    </form>
+
+</div>

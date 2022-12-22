@@ -3,20 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SigninComponent } from './signin/signin.component';
-import { InputComponent } from './input/input.component';
-import { SubmitbtnComponent } from './submitbtn/submitbtn.component';
-import { SignupComponent } from './signup/signup.component';
-import { PasswordComponent } from './password/password.component';
+import { SigninComponent } from './_pages/signin/signin.component';
+import { InputComponent } from './components/forms/input/input.component';
+import { SubmitbtnComponent } from './components/forms/submitbtn/submitbtn.component';
+import { SignupComponent } from './_pages/signup/signup.component';
+import { PasswordComponent } from './_pages/password/password.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MessengerComponent } from './messenger/messenger.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { ChatinfoComponent } from './chatinfo/chatinfo.component';
-import { ChatboxComponent } from './chatbox/chatbox.component';
-import { ChatbarComponent } from './chatbar/chatbar.component';
-import { MessageItemComponent } from './message-item/message-item.component';
+import { DashboardComponent } from './_pages/dashboard/dashboard.component';
+import { SearchbarComponent } from './components/dashboard/searchbar/searchbar.component';
+
+import { ChatbarComponent } from './components/dashboard/chatbar/chatbar.component';
+import { MessageItemComponent } from './components/dashboard/message-item/message-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ChatinfoComponent } from './components/dashboard/chatinfo/chatinfo.component';
+import { ChatboxComponent } from './components/dashboard/chatbox/chatbox.component';
+import { MessengerComponent } from './components/dashboard/messenger/messenger.component';
+import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { MessageItemComponent } from './message-item/message-item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

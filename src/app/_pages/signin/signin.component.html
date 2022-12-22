@@ -7,7 +7,7 @@
 
 
         <!-- FORM COMPONENT -->
-        <form action="" class="form">
+        <form class="form" [formGroup]="signinForm" (ngSubmit)="goPlaces()">
 
             <!-- LOGO & TITLE FORM -->
             <img src="/assets/logo.png" alt="logo" class="form__logo">
@@ -17,8 +17,22 @@
 
             <!-- INPUT COMPONENT -->
           
-            <app-input labelname="Login" placeholder="Email or phone number" type="text"></app-input>
-            <app-input labelname="Password" placeholder="Enter Password" type="password"></app-input>
+            <label for="email"  class="login__input"> Email
+                <input type="text" name="email" placeholder="Enter email" formControlName="username">
+            </label>
+            <div class="error" *ngIf="username?.errors && username?.touched">
+                <p *ngIf="username?.errors!['pattern']">Format invalide</p>  
+                <p  *ngIf="username?.value == '' ">mail requis</p>  
+            </div>
+           
+            
+            <label for="password"  class="login__input"> Password
+                <input type="password" name="password" placeholder="Enter password" formControlName="password">
+            </label>
+            
+            <div class="error" *ngIf="password?.touched && password?.errors">
+                <p *ngIf="password?.errors!['pattern']">Minimum 8 charactères, une majuscule et un caractère spécial</p>  
+            </div>
             
             <!-- FORM SUBMISSION COMPONENT -->
             <div class="form__checkbox">
@@ -27,7 +41,7 @@
                 <a  class="checkbox__link" routerLink="/password"> Forgot password ?</a>
             </div>
 
-            <app-submitbtn value="signin" name="Sign in" (click)="goPlaces()"></app-submitbtn>
+            <app-submitbtn value="signin" name="Sign in"></app-submitbtn>
 
             <div class="form__breakline"></div>
 

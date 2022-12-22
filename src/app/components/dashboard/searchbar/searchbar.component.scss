@@ -1,0 +1,106 @@
+.searchbar__container{
+    background-color: #1E1F25;
+    margin:0;
+    display: flex;
+    justify-content: space-between;
+    height: max-content;
+
+    .logo{
+        width: 64px;
+        height: 64px;
+        padding: 2px;
+        margin: 5px 15px;
+
+        img{
+            width: 64px;
+            height: 60px;
+            cursor: pointer;
+        }
+    }
+    
+    .searchbar{
+        background-color: #050505;
+        border: none;
+        padding: 20px 8px;
+        border-radius: 6px / 5px;
+        outline: none;
+        height: 30px;
+        color: #9BABC5;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .searchbar__profile-pic{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        color: white;
+
+        ul{
+            z-index: 1000;
+            list-style: none;
+            li{
+                cursor: pointer;
+            }
+        }
+
+        .searchbar__profile-info{
+            display: flex;
+            cursor: pointer;
+        }
+
+        .profile-pic{
+            background-color: gray;
+            border-radius: 50%;
+            padding: 2.5px 6px;
+            margin: 5px;
+
+            img{
+                width: 30px;
+                height: 30px;
+                
+            }
+        }
+
+
+    }
+
+    .noprofile{
+        display: none;
+    }
+    
+    .nomargin{
+        margin:0 0 15px 0!important;
+        width: 100% !important;
+        
+        .searchbar__profile-pic{
+            display: none;
+        }
+        .searchbar-icon{
+            right: 85%;
+        }
+        
+    }
+    
+    .searchbar::placeholder{
+        color: #9BABC5;
+    }
+    
+    .search__box{
+        display: flex;
+        margin: auto;
+        width: 26%;
+    }
+    
+    .searchbar-icon{
+        color: white;
+        font-weight: 700;
+        width: 17px;
+        position: relative;
+        bottom:0%;
+        right: 10%;
+        
+    }
+    
+}
+    
