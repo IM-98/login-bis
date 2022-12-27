@@ -19,6 +19,7 @@ import { ChatinfoComponent } from './components/dashboard/chatinfo/chatinfo.comp
 import { ChatboxComponent } from './components/dashboard/chatbox/chatbox.component';
 import { MessengerComponent } from './components/dashboard/messenger/messenger.component';
 import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { SidebarComponent } from './components/dashboard/sidebar/sidebar.compone
     ChatinfoComponent,
     ChatboxComponent,
     ChatbarComponent,
-    MessageItemComponent
+    MessageItemComponent,
   ],
   imports: [
     BrowserModule,

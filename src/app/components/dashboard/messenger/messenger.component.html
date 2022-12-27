@@ -1,8 +1,9 @@
 <div class="messenger__container">
     <div class="messenger__search">
         <h1 class="">Messages</h1>
-        <app-searchbar [withMargin]="true" placeholder="       Search" class="side"></app-searchbar>
-        <div class="messenger__box" *ngFor="let item of messages">
+        <!-- <app-searchbar [withMargin]="true" placeholder="       Search" class="side"></app-searchbar> -->
+        <input type="text" class="searchbar" #searchbar (keyup)="search(searchbar.value)" placeholder="Search">
+        <div class="messenger__box" *ngFor="let item of messageList$ | async">
             <div class="messenger__box-left">
                 <img src={{item.imageUrl}}>
                 <div class="messenger__info">

@@ -20,7 +20,7 @@
         margin: 8px 0 5px 0;
         font-size: 14px;
         font-weight: 400;
-        
+
     }
 
     p {
@@ -60,6 +60,7 @@
 }
 
 .attachment__list {
+    // transition: height 0.3s ease-in, opacity 0.3s ease-in;
     list-style: none;
     margin: 10px 0;
     padding: 0;
@@ -83,13 +84,14 @@
             display: inline-block;
         }
 
-       p{
-        margin: 0;
-       }
-       .attachment__list__item-subtitle{
-        font-size: 10px;
-        color: #768396;
-       }
+        p {
+            margin: 0;
+        }
+
+        .attachment__list__item-subtitle {
+            font-size: 10px;
+            color: #768396;
+        }
     }
 
     .chatinfo__button {
@@ -116,19 +118,19 @@
         margin: 0;
         padding: 0;
 
-        .member__list__item{
+        .member__list__item {
             display: flex;
             align-items: center;
             margin: 10px 0;
 
-            img{
+            img {
                 border-radius: 50%;
                 width: 20px;
                 height: 20px;
                 margin-right: 10px;
             }
 
-            p{
+            p {
                 margin: 0;
             }
         }

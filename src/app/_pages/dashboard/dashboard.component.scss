@@ -8,3 +8,19 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.profile__menu{
+	position: absolute;
+    top: 58px;
+    right: 0;
+    background-color: #1E1F25;
+    color: white;
+    padding: 20px 45px;
+    list-style: none;
+	li{
+		cursor: pointer;
+	}
+	li:hover{
+		color: grey;
+	}
+}

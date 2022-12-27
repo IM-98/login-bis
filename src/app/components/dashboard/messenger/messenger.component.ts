@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import Message, { MessageAPI } from 'src/app/models/MessageModel';
+import { debounceTime, distinctUntilChanged, Observable, startWith, Subject, switchMap } from 'rxjs';
+import Message, { MessageType } from 'src/app/models/MessageModel';
+import { AuthService } from 'src/app/services/Auth.service';
+import { MessageService } from 'src/app/services/message.service';
 
 
 @Component({
@@ -10,19 +13,30 @@ import Message, { MessageAPI } from 'src/app/models/MessageModel';
 })
 export class MessengerComponent implements OnInit {
 
-  messages: Message[] = Message
-  messagesAPI!: MessageAPI
-  constructor(private http: HttpClient) {
+  searchNames = new Subject<string>();
+  messageList$!: Observable<Message[]>;
 
-  }
+  messages: Message[] = Message;
+  messagesList!: Array<MessageType>;
+  constructor(private messageService: MessageService) {}
 
   ngOnInit(): void {
-    this.http.get<MessageAPI>("https://dummyjson.com/comments?limit=8").subscribe(
-      res =>{
-        this.messagesAPI = res
-      }
-    )
+    this.messageService.getMessages((messagesList) => {
+      this.messagesList = messagesList;
+      console.log(this.messagesList);
+    });
+
+    this.messageList$ = this.searchNames.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap((char) => this.messageService.searchMessage(char)),
+      startWith(this.messages)
+    );
   }
 
+  search(name: string) {
+    this.searchNames.next(name.toLowerCase());
+  }
 
 }
+

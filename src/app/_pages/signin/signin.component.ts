@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import IResponse from '../../models/AuthModel';
-import { UserInfoService } from 'src/app/services/user-info.service';
+import { AuthService } from 'src/app/services/Auth.service';
 
 
 @Component({
@@ -27,7 +27,7 @@ goPlaces() {
   signinControl = new FormControl('', {updateOn: 'blur'})
 
 
-  constructor(private formbuilder: FormBuilder, private userinfo: UserInfoService) { }
+  constructor(private formbuilder: FormBuilder, private userinfo: AuthService) { }
     get username() {
       return this.signinForm.get('email');
     }

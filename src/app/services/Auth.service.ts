@@ -8,9 +8,10 @@ import IResponse from '../models/AuthModel';
 @Injectable({
   providedIn: 'root'
 })
-export class UserInfoService {
+export class AuthService {
 
-  ApiUrl: string = "https://dummyjson.com/auth/login"
+  ApiUrl: string = "https://dummyjson.com/auth/login";
+  isLoggedIn: boolean = false
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -20,10 +21,15 @@ export class UserInfoService {
       (res) => {
         localStorage.setItem('user', JSON.stringify(res))
         this.router.navigate(['/', 'dashboard'])
+        this.isLoggedIn = true
       }
     )
   }
 
-
+  logOut(){
+    localStorage.removeItem("user")
+    this.isLoggedIn = false
+    this.router.navigate(["/"])
+  }
 }
 

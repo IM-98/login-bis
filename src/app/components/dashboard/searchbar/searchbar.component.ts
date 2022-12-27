@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import IResponse from 'src/app/models/AuthModel';
+
 
 @Component({
   selector: 'app-searchbar',
@@ -15,27 +16,23 @@ export class SearchbarComponent implements OnInit {
   @Input() withMargin: boolean = false
   @Input() withProfile: boolean = false
   @Input() toggleMenu: boolean = false
+  @Output() toggleMenuChange = new EventEmitter<boolean>();
 
-  constructor(private router: Router) {}
+
+  constructor(private router: Router ) {}
 
   toggleM(){
-    this.toggleMenu = !this.toggleMenu
+    this.toggleMenu = !this.toggleMenu;
+    this.toggleMenuChange.emit(this.toggleMenu);
   }
 
-  logOut(){
-    localStorage.clear()
-    this.router.navigate(["/"])
-
-  }
-
+ 
   ngOnInit() {
  
     let abc = localStorage.getItem("user")!
     let efg = JSON.parse(abc)
 
     this.userInfo = efg
-
-   
 
   }
 

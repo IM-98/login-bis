@@ -1,8 +1,13 @@
 <div class="container">
-    <app-searchbar [withMargin]="false" [withProfile]="true" placeholder="Search anything..."></app-searchbar>
+    <app-searchbar [withMargin]="false" [withProfile]="true" placeholder="Search anything..." (toggleMenuChange)="handleToggleMenuChange($event)"></app-searchbar>
 
     <div class="container-outlet">
         <app-sidebar></app-sidebar>
+        <ul *ngIf="toggleState" class="profile__menu">
+            <li>My profile</li>
+            <li (click)="logOut()" >Log Out</li>
+            <li>Parameters</li>
+        </ul>
         <app-messenger></app-messenger>
 
     </div>
